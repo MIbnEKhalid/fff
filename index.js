@@ -51,10 +51,11 @@ app.get("/read-file", async (_, res) => {
 });
  
 // Serve 404.html for any unmatched routes
+/*
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, "public/404.html"));
 });
-
+*/
 
 // Utility function for hashing tokens
 const hashToken = (token) => {
