@@ -321,6 +321,8 @@
             try {
                 const response = await fetch('https://unilib-m-ibn-e-khalid-github-io.vercel.app/append-file', {
                     method: 'POST',
+                    mode: 'no-cors',
+
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${Token}`  // Ensure this includes 'Bearer ' and the correct token
