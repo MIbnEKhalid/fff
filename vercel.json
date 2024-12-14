@@ -26,6 +26,10 @@
     {
       "src": "/Add",
       "dest": "/add/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/public/404.html"
     }
   ]
 }
