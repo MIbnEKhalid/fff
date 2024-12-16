@@ -30,9 +30,15 @@
     "description": "Assignment 2"
   },
   {
-    "issueDate": "13/12/2024",
-    "dueDate": "03/01/2025 (Fri)",
+    "issueDate": "2024-12-16",
+    "dueDate": "2024-12-23",
     "subject": "Isl",
-    "description": "Quiz 5"
+    "description": "Quiz 7, Sirat Al Nabi"
+  },
+  {
+    "issueDate": "2024-12-16",
+    "dueDate": "2024-12-23",
+    "subject": "Isl",
+    "description": "Quiz 7, Sirat Al Nabi"
   }
 ]
