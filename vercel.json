@@ -8,24 +8,24 @@
     ],
     "routes": [
         {
-            "src": "/(.*)",
+            "src": "/",
             "dest": "/index.js"
         },
         {
             "src": "/history",
-            "dest": "/history/index.html"
+            "dest": "/index.js"
         },
         {
             "src": "/AdminPanel",
-            "dest": "/AdminPanel/index.html"
+            "dest": "/index.js"
         },
         {
             "src": "/AdminPanel/Add/Book",
-            "dest": "/AdminPanel/Add/Book/index.html"
+            "dest": "/index.js"
         },
         {
             "src": "/AdminPanel/Add/QuizAss",
-            "dest": "/AdminPanel/Add/QuizAss/index.html"
+            "dest": "/index.js"
         }
     ]
 }
