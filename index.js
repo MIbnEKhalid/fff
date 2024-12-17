@@ -20,6 +20,16 @@ app.use(
     })
 );
 
+app.use(
+    "/AdminPanel",
+    express.static(path.join(dirname(fileURLToPath(import.meta.url)), "AdminPanel"), {
+        setHeaders: (res, path) => {
+            if (path.endsWith(".css")) {
+                res.setHeader("Content-Type", "text/css");
+            }
+        },
+    })
+);
 // Route to serve the append file page
 app.get("/", (req, res) => {
     res.sendFile(path.join(dirname(fileURLToPath(import.meta.url)), "index.html"));
