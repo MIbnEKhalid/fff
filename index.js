@@ -34,13 +34,13 @@ app.use(
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
  
-app.use("/", express.static(path.join(__dirname, "/")));
-app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
-app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
-app.use("/AdminPanel/Add/Book", express.static(path.join(__dirname, "/AdminPanel/Add/Book")));
-app.use("/AdminPanel/Add/QuizAss", express.static(path.join(__dirname, "/AdminPanel/Add/QuizAss")));
-app.use("/history", express.static(path.join(__dirname, "/history")));
-app.use("/History", express.static(path.join(__dirname, "/History"))); 
+app.use("/", express.static(path.join(__dirname, "public/")));
+app.use("/AdminPanel", express.static(path.join(__dirname, "public/AdminPanel")));
+app.use("/AdminPanel", express.static(path.join(__dirname, "public/AdminPanel")));
+app.use("/AdminPanel/Add/Book", express.static(path.join(__dirname, "public/AdminPanel/Add/Book")));
+app.use("/AdminPanel/Add/QuizAss", express.static(path.join(__dirname, "public/AdminPanel/Add/QuizAss")));
+app.use("/history", express.static(path.join(__dirname, "public/history")));
+app.use("/History", express.static(path.join(__dirname, "public/History"))); 
    
 
 const port =  3000;
