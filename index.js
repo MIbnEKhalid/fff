@@ -9,7 +9,7 @@ app.use(express.json()); // To parse JSON request bodies
 
 // Serve static files
 app.use(
-    "/Assets",
+    "public/Assets",
     express.static(path.join(dirname(fileURLToPath(import.meta.url)), "Assets"), {
         setHeaders: (res, path) => {
             if (path.endsWith(".css")) {
@@ -20,7 +20,7 @@ app.use(
 );
 
 app.use(
-    "/AdminPanel",
+    "public/AdminPanel",
     express.static(path.join(dirname(fileURLToPath(import.meta.url)), "AdminPanel"), {
         setHeaders: (res, path) => {
             if (path.endsWith(".css")) {

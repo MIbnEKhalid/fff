@@ -13,19 +13,19 @@
     },
     {
       "src": "/history",
-      "dest": "/history/index.html"
+      "dest": "public/history/index.html"
     },
     {
       "src": "/AdminPanel",
-      "dest": "/AdminPanel/index.html"
+      "dest": "public/AdminPanel/index.html"
     },
     {
       "src": "/AdminPanel/Add/Book",
-      "dest": "/AdminPanel/Add/Book/index.html"
+      "dest": "public/AdminPanel/Add/Book/index.html"
     },
     {
       "src": "/AdminPanel/Add/QuizAss",
-      "dest": "/AdminPanel/Add/QuizAss/index.html"
+      "dest": "public/AdminPanel/Add/QuizAss/index.html"
     }
   ]
 }
