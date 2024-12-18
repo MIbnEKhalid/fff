@@ -34,10 +34,7 @@ app.use(
 
 
 
- 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
-});
+
 
 app.get("/api/token", (req, res) => {
     const allowedDomains = ["localhost","fff-mu-nine.vercel.app"];
@@ -59,13 +56,20 @@ app.get("/api/token", (req, res) => {
 });
 
 
+ 
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
 app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
 app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
 app.use("/AdminPanel/Add/Book", express.static(path.join(__dirname, "/AdminPanel/Add/Book")));
 app.use("/AdminPanel/Add/QuizAss", express.static(path.join(__dirname, "/AdminPanel/Add/QuizAss")));
 app.use("/history", express.static(path.join(__dirname, "/history")));
 app.use("/History", express.static(path.join(__dirname, "/History"))); 
-   
+// Handle 404 errors
+app.use((req, res, next) => {
+    res.status(404).sendFile(path.join(__dirname, "404.html"));
+});
 
 const port =  3000;
 
