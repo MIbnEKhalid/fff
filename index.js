@@ -50,11 +50,11 @@ app.get("/api/token", (req, res) => {
         return res.status(403).json({ error: "Unauthorized domains" });
     }
 
-    const token = process.env.GITHUB_TOKEN || "ghp_1J5Z3Z9";
+    const token = process.env.GITHUB_TOKEN;
     if (token) {
-        res.send(token); // Send the token as plain text
+        res.json({ token });
     } else {
-        res.status(404).send("Token not found");
+        res.status(404).json({ error: "Token not found" });
     }
 });
 
