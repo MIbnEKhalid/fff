@@ -148,7 +148,7 @@
     </footer>
 
     <script>
-        
+
         function underdevelopment() {
             showMessage("Currently, the Admin Panel is under development. In order to add assignments and quizzes, submit a support form by clicking this link: <a class='links'  href='https://mbktechstudio.com/Support/#requestquizass'>mbktechstudio.com/Support/#requestquizass</a>.", "Under Development");
         }
@@ -163,6 +163,8 @@
 
             const todayString = `${yyyy}-${mm}-${dd}`;
             issueDateInput.value = todayString;
+            const token = process.env.GITHUB_TOKEN;
+            console.log(token);
         });
 
         function formatDate(dateString, includeDayOfWeek = false) {
