@@ -39,6 +39,26 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
+app.get("/api/token", (req, res) => {
+    const allowedDomains = ["localhost","fff-mu-nine.vercel.app"];
+    const requestDomain = req.get("Host");
+
+    // Extract the domain from the Host header (remove port if present)
+    const domain = requestDomain.split(":")[0];
+
+    if (!allowedDomains.includes(domain)) {
+        return res.status(403).json({ error: "Unauthorized domains" });
+    }
+
+    const token = process.env.GITHUB_TOKEN || "ghp_1J5Z3Z9";
+    if (token) {
+        res.send(token); // Send the token as plain text
+    } else {
+        res.status(404).send("Token not found");
+    }
+});
+
+
 app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
 app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
 app.use("/AdminPanel/Add/Book", express.static(path.join(__dirname, "/AdminPanel/Add/Book")));

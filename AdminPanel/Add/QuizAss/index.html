@@ -163,7 +163,7 @@
 
             const todayString = `${yyyy}-${mm}-${dd}`;
             issueDateInput.value = todayString;
-            const token = process.env.GITHUB_TOKEN;
+            const token = fetch('/api/token').then(response => response.json()).then(data => data.token);
             console.log(token);
         });
 
