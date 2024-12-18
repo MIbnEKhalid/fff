@@ -1,5 +1,4 @@
-import express from "express";
-import fs from "fs/promises"; // Use the promisified version of fs
+import express from "express"; 
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
@@ -35,7 +34,7 @@ app.use(
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
  
-app.use("/", express.static(path.join(__dirname, "/index.html")));
+app.use("/", express.static(path.join(__dirname, "/")));
 app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
 app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
 app.use("/AdminPanel/Add/Book", express.static(path.join(__dirname, "/AdminPanel/Add/Book")));
