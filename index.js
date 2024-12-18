@@ -7,8 +7,6 @@ import { dirname } from "path";
 const app = express();
 app.use(express.json()); // To parse JSON request bodies
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve static files
 app.use(
@@ -56,13 +54,13 @@ app.get("/AdminPanel/Add/QuizAss", (req, res) => {
 // Route to serve the history page
 app.get("/history", (req, res) => {
     res.sendFile(
-        path.join(dirname(fileURLToPath(import.meta.url)), "../history/index.html")
+        path.join(dirname(fileURLToPath(import.meta.url)), "history/index.html")
     );
 });
 
 app.get("/History", (req, res) => {
     res.sendFile(
-        path.join(dirname(fileURLToPath(import.meta.url)), "../history/index.html")
+        path.join(dirname(fileURLToPath(import.meta.url)), "history/index.html")
     );
 });
 const port =  3000;
