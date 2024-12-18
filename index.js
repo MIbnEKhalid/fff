@@ -30,39 +30,21 @@ app.use(
         },
     })
 );
-// Route to serve the append file page
-app.get("/", (req, res) => {
-    res.sendFile(path.join(dirname(fileURLToPath(import.meta.url)), "index.html"));
-});
-
-// Route to serve the append file page
-app.get("/AdminPanel", (req, res) => {
-    res.sendFile(path.join(dirname(fileURLToPath(import.meta.url)), "AdminPanel/index.html"));
-});
 
 
-// Route to serve the append file page
-app.get("/AdminPanel/Add/Book", (req, res) => {
-    res.sendFile(path.join(dirname(fileURLToPath(import.meta.url)), "AdminPanel/Add/Book/index.html"));
-});
 
-// Route to serve the append file page
-app.get("/AdminPanel/Add/QuizAss", (req, res) => {
-    res.sendFile(path.join(dirname(fileURLToPath(import.meta.url)), "AdminPanel/Add/QuizAss/index.html"));
-});
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+ 
+app.use("/", express.static(path.join(__dirname, "/")));
+app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
+app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
+app.use("/AdminPanel/Add/Book", express.static(path.join(__dirname, "/AdminPanel/Add/Book")));
+app.use("/AdminPanel/Add/QuizAss", express.static(path.join(__dirname, "/AdminPanel/Add/QuizAss")));
+app.use("/history", express.static(path.join(__dirname, "/history")));
+app.use("/History", express.static(path.join(__dirname, "/History"))); 
+   
 
-// Route to serve the history page
-app.get("/history", (req, res) => {
-    res.sendFile(
-        path.join(dirname(fileURLToPath(import.meta.url)), "history/index.html")
-    );
-});
-
-app.get("/History", (req, res) => {
-    res.sendFile(
-        path.join(dirname(fileURLToPath(import.meta.url)), "history/index.html")
-    );
-});
 const port =  3000;
 
 // Start the server
