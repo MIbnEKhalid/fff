@@ -13,9 +13,9 @@ const __dirname = path.dirname(__filename);
 const config = {
     customKey: "45525",
     validTokens: [
-        { token: "4552255", status: "active" },
-        { token: "4552528", status: "active" },
-        { token: "4552525", status: "active" },
+        { token: process.env.Auth_TOKEN1, status: "active" },
+        { token: process.env.Auth_TOKEN2, status: "active" },
+        { token: process.env.Auth_TOKEN3, status: "active" },
     ],
 };
 
