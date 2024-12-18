@@ -86,7 +86,7 @@ app.get("/api/token", authenticateToken, async (req, res) => {
         return res.status(403).json({ error: "Unauthorized domains" });
     }
 
-    const token = process.env.GITHUB_TOKEN || "lets fucking go";
+    const token = process.env.GITHUB_TOKEN;
     if (token) {
         res.json({ token });
     } else {
