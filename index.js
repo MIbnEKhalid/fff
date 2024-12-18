@@ -34,7 +34,9 @@ app.use(
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
  
-app.use("/", express.static(path.join(__dirname, "/")));
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
 app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
 app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
 app.use("/AdminPanel/Add/Book", express.static(path.join(__dirname, "/AdminPanel/Add/Book")));
