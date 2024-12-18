@@ -14,18 +14,6 @@
     {
       "src": "/history",
       "dest": "public/history/index.html"
-    },
-    {
-      "src": "/AdminPanel",
-      "dest": "public/AdminPanel/index.html"
-    },
-    {
-      "src": "/AdminPanel/Add/Book",
-      "dest": "public/AdminPanel/Add/Book/index.html"
-    },
-    {
-      "src": "/AdminPanel/Add/QuizAss",
-      "dest": "public/AdminPanel/Add/QuizAss/index.html"
     }
   ]
 }

@@ -5,31 +5,7 @@ import { dirname } from "path";
 
 const app = express();
 app.use(express.json()); // To parse JSON request bodies
-
-
-// Serve static files
-app.use(
-    "public/Assets",
-    express.static(path.join(dirname(fileURLToPath(import.meta.url)), "Assets"), {
-        setHeaders: (res, path) => {
-            if (path.endsWith(".css")) {
-                res.setHeader("Content-Type", "text/css");
-            }
-        },
-    })
-);
-
-app.use(
-    "public/AdminPanel",
-    express.static(path.join(dirname(fileURLToPath(import.meta.url)), "AdminPanel"), {
-        setHeaders: (res, path) => {
-            if (path.endsWith(".css")) {
-                res.setHeader("Content-Type", "text/css");
-            }
-        },
-    })
-);
-
+ 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
