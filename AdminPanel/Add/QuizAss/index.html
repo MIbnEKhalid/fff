@@ -163,8 +163,35 @@
 
             const todayString = `${yyyy}-${mm}-${dd}`;
             issueDateInput.value = todayString;
-            const token = fetch('/api/token').then(response => response.json()).then(data => data.token);
-            console.log(token);
+
+            // Define the token variable
+            let token;
+
+            // Fetch the token from the API
+            fetch('/api/token', {
+                method: 'GET',
+                headers: {
+                    // Optional: Add headers if necessary, like Authorization or Content-Type
+                    'Content-Type': 'application/json',
+                }
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Token request failed');
+                    }
+                    return response.json(); // Parse the JSON response
+                })
+                .then((data) => {
+                    // Store the token in the variable
+                    token = data.token;
+                    console.log('Token:', token); // Log the token to the console (or use it as needed)
+                })
+                .catch((error) => {
+                    console.error('Error fetching token:', error);
+                });
+
+
+
         });
 
         function formatDate(dateString, includeDayOfWeek = false) {
