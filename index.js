@@ -7,6 +7,8 @@ import { dirname } from "path";
 const app = express();
 app.use(express.json()); // To parse JSON request bodies
 
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve static files
 app.use(
