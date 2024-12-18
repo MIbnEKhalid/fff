@@ -1,16 +1,18 @@
 import express from "express"; 
 import path from "path";
 import { fileURLToPath } from "url";
-import { dirname } from "path";
+// import { dirname } from "path";
 
 const app = express();
 app.use(express.json()); // To parse JSON request bodies
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Serve static files
 app.use(
     "/Assets",
-    express.static(path.join(dirname(fileURLToPath(import.meta.url)), "Assets"), {
+    express.static(path.join(__dirname, "Assets"), {
         setHeaders: (res, path) => {
             if (path.endsWith(".css")) {
                 res.setHeader("Content-Type", "text/css");
@@ -21,7 +23,7 @@ app.use(
 
 app.use(
     "/AdminPanel",
-    express.static(path.join(dirname(fileURLToPath(import.meta.url)), "AdminPanel"), {
+    express.static(path.join(__dirname, "AdminPanel"), {
         setHeaders: (res, path) => {
             if (path.endsWith(".css")) {
                 res.setHeader("Content-Type", "text/css");
@@ -31,12 +33,12 @@ app.use(
 );
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+
  
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
+
 app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
 app.use("/AdminPanel", express.static(path.join(__dirname, "/AdminPanel")));
 app.use("/AdminPanel/Add/Book", express.static(path.join(__dirname, "/AdminPanel/Add/Book")));
