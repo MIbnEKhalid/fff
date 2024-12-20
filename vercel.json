@@ -10,22 +10,6 @@
     {
       "src": "/(.*)",
       "dest": "/index.js"
-    },
-    {
-      "src": "/history",
-      "dest": "/history/index.html"
-    },
-    {
-      "src": "/AdminPanel",
-      "dest": "/AdminPanel/index.html"
-    },
-    {
-      "src": "/AdminPanel/Add/Book",
-      "dest": "/AdminPanel/Add/Book/index.html"
-    },
-    {
-      "src": "/AdminPanel/Add/QuizAss",
-      "dest": "/AdminPanel/Add/QuizAss/index.html"
     }
   ]
 }
