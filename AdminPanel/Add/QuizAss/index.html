@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="text">
-                    <a href="../">MBK Tech Studio</a>
+                    <a href="../../">MBK Tech Studio</a>
                 </div>
 
             </div>
@@ -210,9 +210,7 @@
             // Get the token from the input field
             const authToken = document.getElementById('token')?.value;
 
-            if (authToken) {
-                // Define the token variable
-                let gitToken;
+            if (authToken) { 
 
                 // Fetch the token from the API
                 fetch('/api/token', {
@@ -233,9 +231,8 @@
                     })
                     .then(async (data) => {
                         // Ensure the token exists in the response
-                        if (data && data.token) {
-                            gitToken = data.token;
-                            await UpdateFile('assigmentsNquiz', newContent, gitToken);
+                        if (data && data.token) { 
+                            await UpdateFile('assigmentsNquiz', newContent, data.token);
                         } else {
                             throw new Error('Token not found in response');
                         }
