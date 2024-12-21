@@ -162,6 +162,23 @@
         function underdevelopment() {
             showMessage("Currently, the Admin Panel is under development. In order to add books, submit a support form by clicking this link: <a class='links' href='https://mbktechstudio.com/Support/#requestbook'>mbktechstudio.com/Support/#requestbook</a>.", "Under Development");
         }
+        // Check URL for parameters and display the appropriate form
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set default issue date to today's date
+            const booknameInput = document.getElementById('bookname');
+            const bookcategoryInput = document.getElementById('bookcategory');
+            const descriptionbookInput = document.getElementById('descriptionbook');
+            const descriptionInput = document.getElementById('description');
+            const drivelinkInput = document.getElementById('drivelink');
+            
+ 
+            booknameInput.value = 'Islamic';
+            bookcategoryInput.value = 'CourseBook';
+            booknameInput.value = 'Islamic';
+            descriptionInput.value = '';
+            drivelinkInput.value = '4552255';
+            tokenInput.value = '4552255';
+        });
 
         document.getElementById('book')?.addEventListener('submit', async (event) => {
             event.preventDefault();
@@ -178,7 +195,7 @@
             // Get the token from the input field
             const authToken = document.getElementById('token')?.value;
 
-            if (authToken) { 
+            if (authToken) {
 
                 // Fetch the token from the API
                 fetch('/api/token', {
@@ -199,7 +216,7 @@
                     })
                     .then(async (data) => {
                         // Ensure the token exists in the response
-                        if (data && data.token) { 
+                        if (data && data.token) {
                             await UpdateFile('assigmentsNquiz', newContent, data.token);
 
                         } else {
